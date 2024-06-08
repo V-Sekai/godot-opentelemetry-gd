@@ -1,4 +1,4 @@
-extends Node
+extends RefCounted
 
 var TraceState = preload("tracestate.gd")
 
@@ -11,7 +11,7 @@ var _trace_flags : int
 var _trace_state : Object
 var _remote : bool
 
-func init(tid: String, sid: String, trace_flags: int, trace_state: Object = null, remote: bool = false):
+func _init(tid: String, sid: String, trace_flags: int, trace_state: Object = null, remote: bool = false):
 	_trace_id = tid
 	_span_id = sid
 	_trace_flags = trace_flags
