@@ -14,7 +14,7 @@ func create_script_from_source(source, override_path=null):
 	if(override_path != null):
 		r_path = override_path
 
-	var DynamicScript = GDScript.new()
+	var DynamicScript: GDScript = GDScript.new()
 	DynamicScript.source_code = source
 	# The resource_path must be unique or Godot thinks it is trying
 	# to load something it has already loaded and generates an error like
@@ -26,4 +26,3 @@ func create_script_from_source(source, override_path=null):
 		DynamicScript = result
 
 	return DynamicScript
-
